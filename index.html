@@ -18,21 +18,23 @@
           hint: 'This company\'s site is known for being written in PHP.'
         }
       };
-      var App = function() {
-        return (
-        <div className='App'>
-          <h1 className='title'>
-            flashback
-          </h1>
-          <p className='sub-title'>
-            An interactive flashcard app.
-          </p>
-          <div className="card-list">
-            {Card(cardData)}
+      class App extends React.Component {
+        render() {
+          return (
+          <div className='App'>
+            <h1 className='title'>
+              flashback
+            </h1>
+            <p className='sub-title'>
+              An interactive flashcard app.
+            </p>
+            <div className="card-list">
+              {Card(cardData)}
+            </div>
           </div>
-        </div>
-        );
-      };
+          );
+        }
+      }
       var Card = function(props) {
         return (
           <div className='Card -font'>
@@ -48,7 +50,7 @@
           </div>
         );
       };
-      ReactDOM.render(App(), document.getElementById('app'));
+      ReactDOM.render(<App/>, document.getElementById('app'));
     </script>
   </body>
 </html>
